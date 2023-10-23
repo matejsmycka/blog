@@ -41,7 +41,7 @@ By default checks only current branch, has a nice feature `-only-verified`, to g
 ## Do it yourself!
 
 There is an infinite tradeoff between precision and variance. 
-If you need more variance and don't mind more manual reviewing, you can try my tool "RegFinder", which is like grep, but recursive, and takes regex patterns from a file. 
+If you need more variance and don't mind more manual reviewing, you can try my tool [RegFinder](https://github.com/matejsmycka/regfinder), which is like grep, but recursive, and takes regex patterns from a file. 
 
 1. Clone this [repository](https://github.com/matejsmycka/regfinder)
 2. Run `./regfinder.elf -d your_app/ -f regex_dir/general.txt`
