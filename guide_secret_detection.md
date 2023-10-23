@@ -41,12 +41,12 @@ By default checks only current branch, has a nice feature `-only-verified`, to g
 ## Do it yourself!
 
 There is an infinite tradeoff between precision and variance. 
-If you need more variance and don't mind more manual reviewing, you can try my tool [RegFinder](https://github.com/matejsmycka/regfinder), which is like grep, but recursive, and takes regex patterns from a file. 
+If you need more variance and don't mind more manual reviewing, you can try my tool [RegFinder](https://github.com/matejsmycka/regfinder), which is like grep, but more suited for secret detection.
 
 1. Clone this [repository](https://github.com/matejsmycka/regfinder)
 2. Run `./regfinder.elf -d your_app/ -f regex_dir/general.txt`
 
-It is very easy to extend existing regex patterns. This tool is not feasible for automated pipeline, however it comes handy if you need to find either non-standard secret, or in something like security review, where you have more manual work is expected.
+It is very easy to extend existing regex patterns. This tool is not feasible for automated pipeline, however it comes handy if you need to find either non-standard secret, or in something like security review, where more manual work is expected.
 
 ## Other tools
 
