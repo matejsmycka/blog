@@ -41,7 +41,13 @@ By default checks only current branch, has a nice feature `-only-verified`, to g
 ## Do it yourself!
 
 There is an infinite tradeoff between precision and variance. 
-If you need more variance and don't mind more manual reviewing, you can try my tool [RegFinder](https://github.com/matejsmycka/regfinder), which is like grep, but more suited for secret detection.
+If you need more variance and don't mind more manual reviewing, you can try my tool [RegFinder](https://github.com/matejsmycka/regfinder), which is like grep, but more suited for secret detection. Or you can use grep directly.
+**Most valuable are the regexes** contained in the repo, not the tool you are gonna use.
+
+1. Clone this [repository](https://github.com/matejsmycka/regfinder)
+2. run `grep -n -r your_app/ -Ef regex_dir/general.txt`
+
+Or
 
 1. Clone this [repository](https://github.com/matejsmycka/regfinder)
 2. Run `./regfinder.elf -d your_app/ -f regex_dir/general.txt`
