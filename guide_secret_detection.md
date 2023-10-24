@@ -3,7 +3,7 @@
 ## Intro 
 
 When it comes to secret detection, remember, it's not a secret if everyone knows it… especially the hackers. 
-Accidentally pushing a password or connection string into remote source control happens even to more seasoned developers. There are many tools that try to solve this problem, this guide describes how to use some of them quickly and easily.
+Accidentally pushing a password or connection string into remote source control happens even to most seasoned developers. There are many tools that try to solve this problem, this guide describes how to use some of them quickly and easily.
 
 **Secret Detection** utilities can be automated with CI/CD pipelines, GitHub actions and other automation tools, however this guide is aimed more at those who are not experienced in this area and will only cover local run and setup. 
 
@@ -26,7 +26,7 @@ This tool by default checks all commits in the history, which is useful.
 
 ## TruffleHog [^3]
 
-By default checks only current branch, has a nice feature `-only-verified`, to get only true positive findings.
+By default checks only current branch, has a nice feature `-only-verified`, to get only true positive findings, but bear in mind, that it will check secrets against real service, so in the context of university services, it is not that helpful.
 
 ### How
 
