@@ -60,6 +60,12 @@ It is very easy to extend existing regex patterns. This tool is not feasible for
 - https://github.com/michenriksen/gitrob
 - https://github.com/eth0izzle/shhgit
 
+## Contact
+
+If want to know more, or you are having some problems with deploy, feel free to reach out to me.
+
+Smycka@ics.muni.cz
+
 ## Resources 
 
 [^1]: https://docs.docker.com/engine/install/
