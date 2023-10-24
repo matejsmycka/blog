@@ -28,13 +28,13 @@ This tool by default checks all commits in the history, which is useful.
 
 By default checks only current branch, has a nice feature `-only-verified`, to get only true positive findings.
 
-## How
+### How
+
 1. Install docker [^1]
     ```bash
     docker run --rm -it -v "$(pwd):/out" \
     trufflesecurity/trufflehog:latest git file:///out | 
-    sed -r 's/\x1b_[^\x1b]*\x1b[\]//g; s/\x1B\[[^m]*m//g' >
-    result.txt
+    sed -r 's/\x1b_[^\x1b]*\x1b[\]//g; s/\x1B\[[^m]*m//g' >result.txt
     ```
 2. This will run TruffleHog in the current directory. The weird `sed` command just escapes ANSI colors.
 
@@ -59,7 +59,6 @@ It is very easy to extend existing regex patterns. This tool is not feasible for
 - https://www.gitguardian.com/
 - https://github.com/michenriksen/gitrob
 - https://github.com/eth0izzle/shhgit
-
 
 ## Resources 
 
