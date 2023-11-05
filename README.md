@@ -1,3 +1,4 @@
-# thesis-pub
+# Blog posts
 
-Additional materials and outputs of my thesis
+These are my blog posts.
+Some were created for my thesis, some for my job, and some purely for fun.
