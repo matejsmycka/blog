@@ -14,7 +14,7 @@ Source code: https://github.com/matejsmycka/cell-generator
 DeadCells game uses cells as currency for unlocking new items. With each run, you start with 0 cells.
 I will try to change the cell value to some arbitrary number. 
 
-We have multiple possible approaches how to changing cell value:
+We have multiple possible approaches to changing cell value:
 
 - Code Caves
 - DLL injection
@@ -29,7 +29,7 @@ Now that we have chosen the approach, we need to define the necessary steps to p
 
 ## Finding a dynamic address using Cheat Engine
 
-"Cheat Engine is by far the de facto "industry standard" for GamePwn. It bundles together essentially every possible tool that could be required, into one neat little package."[2] - PandaSt0rm
+"Cheat Engine is by far the de facto "industry standard" for GamePwn. It bundles together essentially every possible tool that could be required into one neat little package."[2] - PandaSt0rm
 We can attach CheatEngine to our running DeadCells Game. To get relevant dynamic addresses, you need to play the game, get some cells, and then scan for new values in memory.
 We don't know the type of value we are looking for, but it will likely be a number. After a few scans, you are left with multiple addresses that seem relevant.
 
@@ -38,7 +38,7 @@ And voila, the cell counter changed. But this is not persistent. We need to perf
 
 ## Defeating dynamic memory allocation (DMA)
 
-To get a static pointer, we will use another CheatEngine feature pointerscan.
+We will use another CheatEngine feature, `pointerscan` to get a static pointer.
 You need to:
 
 1. locate dynamic address
@@ -75,10 +75,10 @@ Note that due to endianness, reverse your offsets found by CheatEngine.
 
 ## Wrap-up
 
-Writing in Python with libraries like pyMeow[4] would be easier, but the low-level and non-mature nature of rust libraries made me understand it in more detail.
+Writing in Python with libraries like pyMeow[4] would be easier, but rust libraries' low-level and non-mature nature made me understand it in more detail.
 Game hacking is a great intro to Windows API. As a Linux guy, I recommend trying something similar for everybody.
 
-[1]: Game hacking academy - https://gamehacking.academy/about
-[2]: Intro to game hacking - https://www.hackthebox.com/blog/intro-to-gamepwn-aka-game-hacking
-[3]: Rust game hacking lib - https://github.com/pseuxide/toy-arms
-[4]: Python game hacking lib - https://github.com/qb-0/pyMeow
+- [1]: Game hacking academy - https://gamehacking.academy/about
+- [2]: Intro to game hacking - https://www.hackthebox.com/blog/intro-to-gamepwn-aka-game-hacking
+- [3]: Rust game hacking library - https://github.com/pseuxide/toy-arms
+- [4]: Python game hacking library - https://github.com/qb-0/pyMeow
