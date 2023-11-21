@@ -87,7 +87,9 @@ Game hacking is a great intro to Windows API. As a Linux guy, I recommend trying
 
 
 
-/////////////////////////////////////////////// RAW
+RAW POST
+---------------------------------
+```
 In this text, we'll explore the process of creating a cheat for the popular game Dead Cells. Intention behind this guide is purely educational, and I do not endorse cheating for malicious purposes. With that out of the way, let's dive in.
 
 First, I wanted to create a guide on creating cheat for Wesnoth, but I found that somebody has already done it, and describe it in this excellent learning resource[1].
@@ -120,7 +122,6 @@ Finding a dynamic address using Cheat Engine
 
 "Cheat Engine is by far the de facto "industry standard" for GamePwn. It bundles together essentially every possible tool that could be required into one neat little package."[2] - PandaSt0rm
 
-
 We can attach CheatEngine to our running DeadCells game. To get relevant dynamic addresses, you need to play the game, get some cells, and then scan for new values in memory. We don't know the type of value we are looking for, but it will likely be a number. After a few scans, you are left with multiple addresses that seem relevant.
 
 Try modifying values to see if it changes in-game value. However, to update the game GUI, you need to play and get or spend some cells; changing its memory doesn't update the game GUI counter.
@@ -130,9 +131,13 @@ And voila, the cell counter changed. But this is not persistent. We need to perf
 
 Defeating dynamic memory allocation (DMA)
 
+Because modern operating systems use DMA, we have to find out location which doesn't disappear after restarting the process.
+
 We will use another CheatEngine feature, pointerscanner to get a static pointer.
 
- You need to:
+Good resource how to use pointerscanner is here unknowncheats.me.
+
+In order to find out static clues to dynamic location, you need to:
 
 locate dynamic address
 
@@ -150,10 +155,15 @@ It consists of the base address of some game modules, for example, Kernel32.dll+
 
 Unsafe rust
 
-I used a library named toy-arms[3]. This lib helped me, so I dont have to use Windows foreign function interface (FFI) directly.
-I ended up with the following script. The code can be found here.
+I chose rust language, because lot of resources are written in C++, which is similar, however I consider writing Rust more fun then writing it in C++. Python is also solid option.
 
-Here is pseudocode, which explains individual steps. 
+After trying multiple libraries, I chose to go with a library named toy-arms[3].  
+
+This lib is sort of a wrapper around low level memory and process functions, so I don't have to use Windows Foreign Function Interface (FFI) directly. I ended up with the following script. 
+
+The code can be found here.
+
+Here is pseudocode, which explains individual steps.
 
 function main():
     proc = getProcessByName("deadcells.exe")
@@ -167,7 +177,7 @@ function main():
     writeMemory(cellCounterPtr, newValue)
   
 
-And below is actual code of main.  
+And below is actual code of main.
 
 fn main() {
     let proc;
@@ -211,13 +221,13 @@ fn main() {
     println!("Cell counter UI will be updated after sub/add cell ingame event.")
 }
 
-NOTE:  Due to endianness, reverse your offsets found by CheatEngine. 
+NOTE:  Due to endianness, reverse your offsets found by CheatEngine.
 
 After compiling, running rust binary, Powershell window will popup.
 
-Improvements:
+Possible improvements:
 
-Some nice GUI could be implemented or other in-game values could be changed, like freezing value of health, but these are rather simple implementations, considering that main logic was implemented.
+Some nice GUI could be implemented (for easier usage) or other in-game values could be changed, like freezing value of health, but these are rather simple implementations, considering that main logic was implemented.
 
 Wrap-up
 
@@ -232,3 +242,4 @@ Game hacking is a great intro to Windows API. As a Linux guy, I recommend trying
 
 [4]: Python game hacking library - https://github.com/qb-0/pyMeow
 
+```
