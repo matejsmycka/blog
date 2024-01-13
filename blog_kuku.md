@@ -50,8 +50,8 @@ Thank you for reading; feedback is appreciated.
 
 ## Resources
 
-[1]: Original YT video - https://www.youtube.com/watch?v=IWtcvOLsLIk
-[2]: PyInstaller docs - https://pyinstaller.org/en/stable/
-[3]: Kuku source code - https://github.com/vxunderground/MalwareSourceCode/blob/main/MSDOS/K-Index/Virus.MSDOS.Unknown.kuku.bas
-[4]: Turbo BASIC - https://en.wikipedia.org/wiki/PowerBASIC
+- [1]: Original YT video - https://www.youtube.com/watch?v=IWtcvOLsLIk
+- [2]: PyInstaller docs - https://pyinstaller.org/en/stable/
+- [3]: Kuku source code - https://github.com/vxunderground/MalwareSourceCode/blob/main/MSDOS/K-Index/Virus.MSDOS.Unknown.kuku.bas
+- [4]: Turbo BASIC - https://en.wikipedia.org/wiki/PowerBASIC
 
